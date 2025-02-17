@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#000000">
+    <title>404 | The1Percent</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Courier New', Courier, monospace; }
+        body {
+            background: radial-gradient(circle, #0d1117, #000);
+            color: white;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .container {
+            position: relative;
+            width: 90%;
+            max-width: 500px;
+        }
+
+        /* Animated 404 Floating Effect */
+        .error-code {
+            font-size: 8rem;
+            font-weight: bold;
+            text-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+            animation: float 3s ease-in-out infinite;
+        }
+
+        /* Glitch Effect */
+        .glitch {
+            font-size: 1.5rem;
+            position: relative;
+            display: inline-block;
+            animation: glitch 1.5s infinite alternate;
+        }
+
+        /* Animated SVG Team Logo */
+        svg {
+            width: 180px;
+            height: auto;
+            margin: 20px auto;
+            opacity: 0;
+            animation: fadeIn 1.5s ease-in-out forwards;
+        }
+
+        path {
+            stroke-dasharray: 300;
+            stroke-dashoffset: 300;
+            animation: draw 2s linear forwards;
+        }
+
+        /* Button Styling */
+        .btn {
+            display: inline-block;
+            padding: 12px 25px;
+            font-size: 1rem;
+            color: white;
+            background: #1f6feb;
+            border-radius: 50px;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease-in-out;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.3);
+        }
+
+        .btn:hover {
+            background: #539bf5;
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.6);
+        }
+
+        /* Background Animation */
+        .bg-anim {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 10%, transparent 70%);
+            animation: pulse 6s infinite alternate;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes draw {
+            to { stroke-dashoffset: 0; }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            25% { transform: translate(-2px, 2px); }
+            50% { transform: translate(2px, -2px); }
+            75% { transform: translate(-2px, 2px); }
+            100% { transform: translate(0); }
+        }
+
+        @keyframes pulse {
+            0% { opacity: 0.2; }
+            100% { opacity: 0.4; }
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="bg-anim"></div>
+
+    <div class="container">
+        <div class="error-code">404</div>
+        <p class="glitch">Oops! The page you were looking for doesn't exist.</p>
+
+        <!-- Animated SVG with Team Identity -->
+        <svg viewBox="0 0 300 100">
+            <text x="10" y="60" font-size="35" fill="none" stroke="#ffffff" stroke-width="1.5" font-family="Arial">
+                <tspan>T1P</tspan>
+            </text>
+            <path d="M10,70 H200" stroke="#ffffff" stroke-width="2" fill="none"/>
+        </svg>
+
+        <br>
+        <a href="#" class="btn">Return Home</a>
+    </div>
+
+</body>
+</html>
